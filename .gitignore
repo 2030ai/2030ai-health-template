@@ -54,3 +54,7 @@ inbox/*
 .serena/
 .vscode/
 .idea/
+
+# Local IDE skill mirrors (G2 policy: public template)
+.cursor/skills/
+.agents/skills/
