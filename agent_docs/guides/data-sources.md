@@ -143,7 +143,7 @@
 
 *Формат результата:* txt/tsv с rsID + nucleotide calls, плюс PDF-интерпретация.
 
-*Куда:* `data/other/YYYY-MM-DD-genetics-<provider>.md` (метаданные + ключевые SNP), сам raw-файл — в `<ORIGINALS_DIR>/genetics/`.
+*Куда:* `data/genetics/YYYY-MM-DD-<provider>.md` (метаданные + ключевые SNP), сам raw-файл — в `<ORIGINALS_DIR>/genetics/`.
 
 ### A.9. Имиджинг (КТ / МРТ / УЗИ / рентген / стоматологические снимки)
 

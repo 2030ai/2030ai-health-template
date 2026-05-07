@@ -14,7 +14,7 @@
 
 **Что получаете сразу:**
 
-- Дерево каталогов на **16 типов данных** (анализы, витальные, лекарства, визиты, прививки, сон, активность, симптомы, ментальное, стоматология, офтальмология, семейный анамнез, импорт устройств, питание, имиджинг, прочее).
+- Дерево каталогов на **17 типов данных** (анализы, витальные, лекарства, визиты, прививки, сон, активность, симптомы, ментальное, стоматология, офтальмология, семейный анамнез, импорт устройств, питание, имиджинг, генетика, прочее).
 - **Спецификацию YAML frontmatter** — обязательные поля, провенанс, именование, wiki-links.
 - **Шаблоны** для каждого типа записи (Obsidian Templates plugin).
 - **Dataview-дашборды** — последние записи, активные лекарства, предстоящие визиты, непроверенные результаты.
@@ -94,10 +94,10 @@ Obsidian vault + git. Референс-шаблон: https://github.com/2030ai/2
 ├── AGENTS.md                # правила для ИИ-агента (см. шаблон)
 ├── CLAUDE.md                # инструкции под Claude Code (см. шаблон)
 ├── .gitignore               # игнорит temp/, .obsidian/workspace, .env
-├── data/                    # 16 поддиректорий:
+├── data/                    # 17 поддиректорий:
 │   blood-tests/ vitals/ activity/ sleep/ nutrition/ symptoms/
 │   mental/ medications/ doctor-visits/ dental/ vision/ vaccinations/
-│   family-history/ devices/ imaging/ other/
+│   family-history/ devices/ imaging/ genetics/ other/
 ├── templates/               # заготовки frontmatter для каждого типа
 ├── dashboards/              # Dataview-обзоры (overview, blood-tests,
 │                            # medications, symptoms)
@@ -214,13 +214,13 @@ https://github.com/2030ai/2030ai-health-template
 
 | Поле | Значения | Пример |
 |---|---|---|
-| `type` | одно из 14 значений (см. ниже) | `blood-test` |
+| `type` | одно из 17 значений (см. ниже) | `blood-test` |
 | `date` | YYYY-MM-DD | `2025-04-20` |
 | `tags` | массив строк | `[CBC, fasting]` |
 | `source` | `manual` \| `inbox` \| `gmail` \| `telegram` \| `apple-health` \| `fitbit` \| `google-drive` и т.п. | `gmail` |
 | `status` | `raw` \| `verified` \| `reviewed` | `raw` |
 
-**Значения `type`:** `blood-test`, `vital`, `sleep`, `activity`, `medication`, `doctor-visit`, `symptom`, `mental`, `dental`, `vision`, `vaccination`, `family-history`, `nutrition`, `device-import`, `imaging`, `other`.
+**Значения `type`:** `blood-test`, `vital`, `sleep`, `activity`, `medication`, `doctor-visit`, `symptom`, `mental`, `dental`, `vision`, `vaccination`, `family-history`, `nutrition`, `device-import`, `imaging`, `genetics`, `other`.
 
 **Поля провенанса** (опциональные, опускайте при `source: manual`): `origin_url`, `origin_type`, `origin_file`, `origin_date`.
 

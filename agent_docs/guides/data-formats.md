@@ -6,7 +6,7 @@
 
 | Поле | Значения | Описание |
 |---|---|---|
-| `type` | `blood-test`, `vital`, `sleep`, `activity`, `medication`, `doctor-visit`, `symptom`, `mental`, `dental`, `vision`, `vaccination`, `family-history`, `nutrition`, `device-import`, `imaging`, `other` | Тип записи |
+| `type` | `blood-test`, `vital`, `sleep`, `activity`, `medication`, `doctor-visit`, `symptom`, `mental`, `dental`, `vision`, `vaccination`, `family-history`, `nutrition`, `device-import`, `imaging`, `genetics`, `other` | Тип записи |
 | `date` | `YYYY-MM-DD` | Дата события |
 | `tags` | `[тег1, тег2]` | Теги для поиска |
 | `source` | `inbox`, `manual`, `apple-health`, `fitbit`, `gmail`, `telegram`, `google-drive`, `portal` | Откуда данные |
