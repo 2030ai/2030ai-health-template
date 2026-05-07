@@ -139,8 +139,9 @@ origin_date: <YYYY-MM-DD>       # дата получения
 | vaccination | data/vaccinations/ | Прививки, скрининги |
 | family-history | data/family-history/ | Семейный анамнез |
 | imaging | data/imaging/ | КТ/МРТ/УЗИ заключения |
+| genetics | data/genetics/ | SNP, WGS, фармакогенетика |
 | device-import | data/devices/ | Сырые экспорты устройств |
-| other | data/other/ | Генетика, биохакинг, прочее |
+| other | data/other/ | Биохакинг, прочее |
 
 ## Оригиналы файлов
 
