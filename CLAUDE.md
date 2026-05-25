@@ -4,7 +4,9 @@
 
 ## Основной скилл
 
-- [`health-update`](.claude/skills/health-update/SKILL.md) — единая точка входа для сбора и обработки health-данных из всех источников.
+- [`health-update`](.agents/skills/health-update/SKILL.md) — единая точка входа для сбора и обработки health-данных из всех источников.
+
+Canonical skill source: `.agents/skills/health-update/SKILL.md`. Platform mirrors are symlinks in `.claude/skills/`, `.codex/skills/`, and `.cursor/skills/`.
 
 Триггеры: `/health-update`, `"обнови здоровье"`, `"проверь здоровье"`, `"собери данные"`, `"health update"`.
 

@@ -203,7 +203,10 @@ https://github.com/2030ai/2030ai-health-template
 │       ├── dod.md
 │       └── archiving-and-temp.md
 ├── inbox/                  # сырые файлы, ждут обработки
-└── .claude/skills/health-update/SKILL.md   # скилл для Claude Code
+├── .agents/skills/health-update/SKILL.md   # canonical project-local skill
+├── .claude/skills/health-update            # Claude Code mirror
+├── .codex/skills/health-update             # Codex mirror
+└── .cursor/skills/health-update            # Cursor mirror
 ```
 
 ---

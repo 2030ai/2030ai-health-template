@@ -55,6 +55,6 @@ inbox/*
 .vscode/
 .idea/
 
-# Local IDE skill mirrors (G2 policy: public template)
-.cursor/skills/
-.agents/skills/
+# Project-local skill source and mirrors are intentionally tracked:
+# .agents/skills/ (source)
+# .claude/skills/, .codex/skills/, .cursor/skills/ (symlink mirrors)
