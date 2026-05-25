@@ -1,13 +1,8 @@
 ---
 name: health-update
 description: "Сбор health-данных из всех источников: inbox/, Gmail, тематический Telegram-чат. Парсинг, классификация, создание структурированных записей в data/, перемещение оригиналов в <ORIGINALS_DIR>."
-triggers:
-  - "health-update"
-  - "обнови здоровье"
-  - "проверь здоровье"
-  - "собери данные"
-  - "health update"
-  - "check health data"
+when_to_use: "Use when the user asks to collect, update, import, or structure personal health data from inbox files, Gmail, or Telegram. Russian triggers include: обнови здоровье, проверь здоровье, собери данные. English triggers include: health update, check health data."
+disable-model-invocation: true
 ---
 
 # Health Update — сбор и обработка данных о здоровье
