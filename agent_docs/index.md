@@ -8,6 +8,7 @@
 - `agent_docs/development-history.md` — журнал итераций; смотреть последнюю запись.
 
 ## Правила и гайды
+- `agent_docs/guides/claude-code.md` — preserved project-specific Claude Code instructions.
 - `agent_docs/guides/dod.md` — критерии завершенности (DoD).
 - `agent_docs/guides/data-formats.md` — спецификация frontmatter, форматов данных и провенанса.
 - `agent_docs/guides/data-sources.md` — каталог источников health-данных (проверенные + потенциальные).
