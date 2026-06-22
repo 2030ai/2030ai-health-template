@@ -1,0 +1,9 @@
+name: health-update
+display_name: "/health-update"
+description: "/health-update — Сбор health-данных из всех источников: inbox/, Gmail, тематический Telegram-чат. Парсинг, классификация, создание структурированных записей в data/, перемещение оригиналов в <ORIGINALS_DIR>."
+short_description: "Сбор health-данных из всех источников: inbox/, Gmail, тематический Telegram-чат"
+default_prompt: "Use /health-update for this workflow."
+interface:
+  display_name: "/health-update"
+  short_description: "Local project skill /health-update"
+  default_prompt: "Use $health-update for this local project workflow."
