@@ -1,8 +1,6 @@
 ---
 name: health-update
-description: "/health-update — Сбор health-данных из всех источников: inbox/, Gmail, тематический Telegram-чат. Парсинг, классификация, создание структурированных записей в data/, перемещение оригиналов в <ORIGINALS_DIR>."
-when_to_use: "Use when the user asks to collect, update, import, or structure personal health data from inbox files, Gmail, or Telegram. Russian triggers include: обнови здоровье, проверь здоровье, собери данные. English triggers include: health update, check health data."
-disable-model-invocation: true
+description: Use when the user asks to collect, update, import, or structure personal health data from inbox files, Gmail, or Telegram into the health vault; route Telegram reads only through the global Windows Telegram Gateway.
 ---
 
 # /health-update
@@ -54,16 +52,22 @@ Glob inbox/* → для каждого файла:
 
 ### Шаг 3. Чтение Telegram
 
-Если Telegram используется — использовать `telegram-read: message_ops` для чата `<TG_CHAT>`:
+Если Telegram используется — обращаться только к глобальному
+`$telegram-gateway`. Не подключать Telegram MCP, Desktop, Telethon или запасной
+локальный кэш:
 
 ```
-1. Найти чат: chat_ops search "<TG_CHAT>"
-2. Прочитать последние сообщения (limit: 50)
-3. Для каждого нового сообщения:
+1. Проверить Gateway: status
+2. Разрешить чат: resolve --kind dialog --name "<TG_CHAT>"
+3. Прочитать bounded period: recent --dialog-ref <opaque-ref> --start ... --end ...
+4. Для каждого нового сообщения:
    - Определить тип данных по содержимому
    - Создать .md в data/<type>/
    - origin_type: telegram
 ```
+
+При `indexing_pending`, неоднозначном чате или недоступном Gateway остановить
+только Telegram-шаг и показать безопасный статус; другой транспорт запрещён.
 
 ### Шаг 4. Отчёт
 
@@ -170,9 +174,9 @@ Grep по дате + типу + ключевым словам → если по�
 |---|---|---|
 | `google-mcp-readonly: gmail_search` | Поиск писем от лабораторий | Нет |
 | `google-mcp-readonly: gmail_get_message` | Чтение письма | Нет |
-| `telegram-read: message_ops` | Чтение сообщений Telegram | Нет |
-| `telegram-read: chat_ops` | Поиск чата `<TG_CHAT>` | Нет |
+| `$telegram-gateway: status/resolve/recent` | Поиск и чтение Telegram | Нет |
 | Glob, Read, Write | Работа с `inbox/` и `data/` | Да |
 | Bash (cp, rm) | Перемещение оригиналов | Да |
 
-Если нет MCP для Gmail/Telegram — используйте только шаги 1 и 4 (ручной дроп в `inbox/`).
+Если Gmail-коннектор или Telegram Gateway недоступны — используйте только шаги
+1 и 4 (ручной дроп в `inbox/`).
